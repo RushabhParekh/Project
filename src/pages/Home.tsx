@@ -8,11 +8,11 @@ import img1 from './toyota-corolla-18l-elite-hybrid-cvt-fwd.jpg';   // Toyota Co
 import img2 from './m_r_w.webp';   // Honda Civic
 import img3 from './tucson.webp';   // Hyundai Tucson
 import img4 from './crv.jpg';   // Honda CR-V
-//import img5 from '..jpg';   // BMW 3 Series
-//import img6 from './.jpg';   // Audi Q5
-import img7 from './tesla.webp';   // Tesla Model 3
-//import img8 from './8.jpg';   // Ford Mustang
-///import img9 from './9.jpg';   // Jeep Wrangler
+import img5 from './lexus.jpg';   // BMW 3 Series
+import img6 from './tesla.webp';   // Audi Q5
+import img7 from './porche.jpg';   // Tesla Model 3
+import img8 from './bmw.jpg';   // Ford Mustang
+import img9 from './audi.avif';   // Jeep Wrangler
 import img10 from './mercides.avif'; // Mercedes-Benz GLS
 
 const imagesMap: Record<string, string> = {
@@ -20,11 +20,11 @@ const imagesMap: Record<string, string> = {
   '2': img2,
   '3': img3,
   '4': img4,
-  //'5': img5,
-  //'6': img6,
+  '5': img5,
+  '6': img6,
   '7': img7,
-  //'8': img8,
-  //'9': img9,
+  '8': img8,
+  '9': img9,
   '10': img10,
 };
 
