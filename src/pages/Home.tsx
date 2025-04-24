@@ -3,6 +3,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { cars } from '../data/cars';
 
+// Local car images (place these JPGs in the same folder as this file)
+import img1 from './toyota-corolla-18l-elite-hybrid-cvt-fwd.jpg';   // Toyota Corolla
+import img2 from './m_r_w.webp';   // Honda Civic
+import img3 from './tucson.webp';   // Hyundai Tucson
+import img4 from './crv.jpg';   // Honda CR-V
+//import img5 from '..jpg';   // BMW 3 Series
+//import img6 from './.jpg';   // Audi Q5
+import img7 from './tesla.webp';   // Tesla Model 3
+//import img8 from './8.jpg';   // Ford Mustang
+///import img9 from './9.jpg';   // Jeep Wrangler
+import img10 from './mercides.avif'; // Mercedes-Benz GLS
+
+const imagesMap: Record<string, string> = {
+  '1': img1,
+  '2': img2,
+  '3': img3,
+  '4': img4,
+  //'5': img5,
+  //'6': img6,
+  '7': img7,
+  //'8': img8,
+  //'9': img9,
+  '10': img10,
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -24,9 +49,9 @@ export default function Home() {
               to={`/car/${car.id}`}
               className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Image */}
+              {/* Car Image */}
               <img
-                src={car.image}
+                src={imagesMap[car.id]}
                 alt={car.name}
                 className="w-full h-48 object-cover"
               />
