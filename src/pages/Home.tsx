@@ -1,30 +1,37 @@
+// src/pages/Home.tsx
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { cars } from '../data/cars';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">Premium Car Rentals in Toronto</h1>
-          <p className="text-xl">Experience luxury and comfort at competitive prices</p>
+      {/* Hero Section */}
+      <header className="bg-blue-600 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl font-bold">Premium Car Rentals in Toronto</h1>
+          <p className="mt-2 text-xl">Experience luxury and comfort at competitive prices</p>
         </div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Fleet</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      </header>
+
+      {/* Fleet Grid */}
+      <section className="container mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-8 text-gray-800">Our Fleet</h2>
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {cars.map((car) => (
             <Link
-              to={`/car/${car.id}`}
               key={car.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+              to={`/car/${car.id}`}
+              className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
+              {/* Image */}
               <img
                 src={car.image}
                 alt={car.name}
                 className="w-full h-48 object-cover"
               />
+
+              {/* Card Body */}
               <div className="p-4">
                 <h3 className="text-xl font-semibold text-gray-800">{car.name}</h3>
                 <p className="text-gray-600 mt-2">{car.description}</p>
@@ -36,7 +43,7 @@ export default function Home() {
             </Link>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }
