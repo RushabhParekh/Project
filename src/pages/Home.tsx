@@ -1,32 +1,9 @@
-// src/pages/Home.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cars } from '../data/cars';
 
-// Local car images (place these JPGs in the same folder as this file)
-import img1 from './toyota-corolla-18l-elite-hybrid-cvt-fwd.jpg';   // Toyota Corolla
-import img2 from './m_r_w.webp';   // Honda Civic
-import img3 from './tucson.webp';   // Hyundai Tucson
-import img4 from './crv.jpg';   // Honda CR-V
-import img5 from './lexus.jpg';   // BMW 3 Series
-import img6 from './tesla.webp';   // Audi Q5
-import img7 from './porche.jpg';   // Tesla Model 3
-import img8 from './bmw.jpg';   // Ford Mustang
-import img9 from './audi.avif';   // Jeep Wrangler
-import img10 from './mercides.avif'; // Mercedes-Benz GLS
-
-const imagesMap: Record<string, string> = {
-  '1': img1,
-  '2': img2,
-  '3': img3,
-  '4': img4,
-  '5': img5,
-  '6': img6,
-  '7': img7,
-  '8': img8,
-  '9': img9,
-  '10': img10,
-};
+// This file uses images stored in the `public/images` directory, named `1.jpg` through `10.jpg`.
+// Ensure you have placed each car image next to public/index.html at: public/images/1.jpg, 2.jpg, etc.
 
 export default function Home() {
   return (
@@ -49,9 +26,9 @@ export default function Home() {
               to={`/car/${car.id}`}
               className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Car Image */}
+              {/* Car Image: served from public/images */}
               <img
-                src={imagesMap[car.id]}
+                src={`/images/${car.id}.jpg`}  // {car.name}
                 alt={car.name}
                 className="w-full h-48 object-cover"
               />
